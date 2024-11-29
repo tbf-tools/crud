@@ -6,6 +6,7 @@
   "workspaces": [
     "packages/*"
   ],
+  "private": true,
   "scripts": {
     "boot": "npx lerna bootstrap",
     "rebuild": "npm clean && npm build",
