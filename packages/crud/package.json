@@ -1,7 +1,7 @@
 {
-  "name": "@nestjsx/crud",
+  "name": "@tbf-tools/crud",
   "description": "NestJs CRUD for RESTful APIs",
-  "version": "5.0.0-alpha.3",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nestjsx/crud.git"
+    "url": "https://github.com/tbf-tools/crud.git"
   },
   "bugs": {
-    "url": "https://github.com/nestjsx/crud/issues"
+    "url": "https://github.com/tbf-tools/crud/issues"
   },
   "keywords": [
     "typescript",
@@ -39,8 +39,8 @@
     "build": "npx tsc -b"
   },
   "dependencies": {
-    "@nestjsx/crud-request": "^5.0.0-alpha.3",
-    "@nestjsx/util": "^5.0.0-alpha.3",
+    "@tbf-tools/crud-request": "^1.0.0",
+    "@tbf-tools/util": "^1.0.0",
     "deepmerge": "^3.2.0",
     "pluralize": "^8.0.0"
   },

@@ -17,8 +17,17 @@ import {
   SConditionKey,
   ComparisonOperator,
 } from '@nestjsx/crud-request';
-import { ClassType, hasLength, isArrayFull, isObject, isUndefined, objKeys, isNil, isNull } from '@nestjsx/util';
-import { oO } from '@zmotivat0r/o0';
+import {
+  ClassType,
+  hasLength,
+  isArrayFull,
+  isObject,
+  isUndefined,
+  objKeys,
+  isNil,
+  isNull,
+  withRetry,
+} from '@nestjsx/util';
 import { plainToClass } from 'class-transformer';
 import {
   Brackets,
@@ -202,7 +211,7 @@ export class TypeOrmCrudService<T> extends CrudService<T> {
   public async replaceOne(req: CrudRequest, dto: T | Partial<T>): Promise<T> {
     const { allowParamsOverride, returnShallow } = req.options.routes.replaceOneBase;
     const paramsFilters = this.getParamFilters(req.parsed);
-    const [_, found] = await oO(this.getOneOrFail(req, returnShallow));
+    const [_, found] = await withRetry(this.getOneOrFail(req, returnShallow));
     const toSave = !allowParamsOverride
       ? { ...(found || {}), ...dto, ...paramsFilters, ...req.parsed.authPersist }
       : {
@@ -810,7 +819,7 @@ export class TypeOrmCrudService<T> extends CrudService<T> {
 
   protected getFieldWithAlias(field: string, sort = false) {
     /* istanbul ignore next */
-    const i = ['mysql','mariadb'].includes(this.dbName) ? '`' : '"';
+    const i = ['mysql', 'mariadb'].includes(this.dbName) ? '`' : '"';
     const cols = field.split('.');
 
     switch (cols.length) {
