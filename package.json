@@ -10,7 +10,7 @@
   "scripts": {
     "boot": "npx lerna bootstrap",
     "rebuild": "npm clean && npm build",
-    "build": "npm s build",
+    "build": "npx lerna run build",
     "clean": "npm s clean",
     "s": "npx nps",
     "s:list": "npm s --scripts",

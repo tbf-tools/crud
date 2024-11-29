@@ -1,7 +1,7 @@
 import { Controller, Get, Param, ParseIntPipe, Query, UseInterceptors } from '@nestjs/common';
 import { NestApplication } from '@nestjs/core';
 import { Test } from '@nestjs/testing';
-import { RequestQueryBuilder } from '@nestjsx/crud-request';
+import { RequestQueryBuilder } from '@tbf-tools/crud-request';
 import * as supertest from 'supertest';
 import { Crud, ParsedRequest, CrudAuth, Override } from '../src/decorators';
 import { CrudRequestInterceptor } from '../src/interceptors';

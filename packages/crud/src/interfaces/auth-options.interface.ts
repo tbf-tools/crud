@@ -1,5 +1,5 @@
-import { SCondition } from '@nestjsx/crud-request/lib/types/request-query.types';
-import { ObjectLiteral } from '@nestjsx/util';
+import { SCondition } from '@tbf-tools/crud-request/lib/types/request-query.types';
+import { ObjectLiteral } from '@tbf-tools/util';
 import { ClassTransformOptions } from 'class-transformer';
 
 export interface AuthGlobalOptions {
