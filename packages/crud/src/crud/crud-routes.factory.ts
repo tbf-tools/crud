@@ -123,13 +123,22 @@ export class CrudRoutesFactory {
     this.options.serialize.get = isFalse(this.options.serialize.get)
       ? false
       : this.options.serialize.get || this.modelType;
+    // Comment to use the custom
+    // this.options.serialize.getMany = isFalse(this.options.serialize.getMany)
+    //   ? false
+    //   : this.options.serialize.getMany
+    //   ? this.options.serialize.getMany
+    //   : isFalse(this.options.serialize.get)
+    //   ? /* istanbul ignore next */ false
+    //   : SerializeHelper.createGetManyDto(this.options.serialize.get, this.modelName);
     this.options.serialize.getMany = isFalse(this.options.serialize.getMany)
       ? false
       : this.options.serialize.getMany
-      ? this.options.serialize.getMany
+      ? SerializeHelper.createGetManyDto(this.options.serialize.getMany, this.modelName)
       : isFalse(this.options.serialize.get)
       ? /* istanbul ignore next */ false
       : SerializeHelper.createGetManyDto(this.options.serialize.get, this.modelName);
+    //
     this.options.serialize.create = isFalse(this.options.serialize.create)
       ? false
       : this.options.serialize.create || this.modelType;
