@@ -15,39 +15,6 @@
 <br />
 
 <div align="center">
-  <a href="https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md">
-    <img src="https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg" alt="StandWithUkraine" />
-  </a>
-  <a href="https://travis-ci.org/nestjsx/crud">
-    <img src="https://github.com/nestjsx/crud/workflows/Tests/badge.svg" alt="Build" />
-  </a>
-  <a href="https://coveralls.io/github/nestjsx/crud?branch=master">
-    <img src="https://coveralls.io/repos/github/nestjsx/crud/badge.svg" alt="Coverage" />
-  </a>
-  <a href="https://github.com/nestjsx/crud/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/nestjsx/crud.svg" alt="License" />
-  </a>
-  <a href="https://www.npmjs.com/package/@nestjsx/crud">
-    <img src="https://img.shields.io/npm/v/@nestjsx/crud.svg" alt="npm version" />
-  </a>
-  <a href="https://www.npmjs.com/org/nestjsx">
-    <img src="https://img.shields.io/npm/dm/@nestjsx/crud.svg" alt="npm downloads" />
-  </a>
-  <a href="http://makeapullrequest.com">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs welcome" />
-  </a>
-  <a href="https://github.com/marmelab/awesome-rest#nodejs">
-    <img src="https://raw.githubusercontent.com/nestjsx/crud/master/img/awesome-rest.svg?sanitize=true" alt="Awesome REST" />
-  </a>
-  <a href="#individuals" alt="Sponsors on Open Collective">
-    <img src="https://opencollective.com/nestjsx/backers/badge.svg" />
-  </a>
-  <a href="#organizations" alt="Sponsors on Open Collective">
-    <img src="https://opencollective.com/nestjsx/sponsors/badge.svg" />
-  </a> 
-</div>
-
-<div align="center">
   <sub>Built with :purple_heart: by
   <a href="https://twitter.com/MichaelYali">@MichaelYali</a> and
   <a href="https://github.com/nestjsx/crud/graphs/contributors">
