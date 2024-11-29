@@ -1,18 +1,19 @@
 {
-  "name": "tbf-tools/crud",
+  "name": "@tbf-tools/crud",
   "version": "1.0.0",
   "description": "Nest CRUD for RESTful APIs",
   "license": "MIT",
   "workspaces": [
     "packages/*"
   ],
-  "private": true,
   "scripts": {
     "boot": "npx lerna bootstrap",
     "rebuild": "npm clean && npm build",
-    "build": "npx mrepo build",
-    "clean": "npx mrepo clean && npx rimraf ./.mrepo",
-    "test": "npx mrepo test",
+    "build": "npm s build",
+    "clean": "npm s clean",
+    "s": "npx nps",
+    "s:list": "npm s --scripts",
+    "test": "npx jest --runInBand -c=jest.config.js packages/ --verbose",
     "test:coverage": "npm test:all --coverage",
     "test:coveralls": "npm test:coverage --coverageReporters=text-lcov | coveralls",
     "test:all": "npm test:mysql && npm test:postgres",
@@ -30,9 +31,7 @@
     "commit": "npx git-cz",
     "postinstall": "npx opencollective",
     "prepare": "npx husky install",
-    "release": "mrepo release",
-    "release:alpha": "npm release prerelease --preid alpha --dist-tag alpha",
-    "release:beta": "npm release prerelease --preid beta --dist-tag beta"
+    "release": "npx lerna publish --force-publish --no-verify-access"
   },
   "config": {
     "commitizen": {
@@ -50,10 +49,9 @@
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
-    "@nestjs/swagger": "5.2.1",
+    "@nestjs/swagger": "7.2.0",
     "@nestjs/testing": "^10.0.0",
     "@nestjs/typeorm": "^10.0.0",
-    "@zmotivat0r/mrepo": "0.8.1",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.1",
     "mysql": "2.18.1",
@@ -84,8 +82,10 @@
     "husky": "7.0.4",
     "jest": "27.5.1",
     "jest-extended": "2.0.0",
-    "lerna": "4.0.0",
+    "lerna": "^8.1.9",
     "nodemon": "2.0.15",
+    "nps": "^5.10.0",
+    "nps-utils": "^1.7.0",
     "prettier": "2.6.1",
     "pretty-quick": "3.1.3",
     "rimraf": "3.0.2",
