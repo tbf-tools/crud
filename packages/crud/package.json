@@ -1,7 +1,7 @@
 {
   "name": "@tbf-tools/crud",
   "description": "NestJs CRUD for RESTful APIs",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -39,8 +39,8 @@
     "build": "npx tsc -b"
   },
   "dependencies": {
-    "@tbf-tools/crud-request": "^1.0.1",
-    "@tbf-tools/util": "^1.0.1",
+    "@tbf-tools/crud-request": "^1.1.0",
+    "@tbf-tools/util": "^1.1.0",
     "deepmerge": "^3.2.0",
     "pluralize": "^8.0.0"
   },
