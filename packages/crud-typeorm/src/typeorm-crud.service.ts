@@ -7,7 +7,7 @@ import {
   JoinOption,
   JoinOptions,
   QueryOptions,
-} from '@nestjsx/crud';
+} from '@tbf-tools/crud';
 import {
   ParsedRequestParams,
   QueryFilter,
@@ -16,7 +16,7 @@ import {
   SCondition,
   SConditionKey,
   ComparisonOperator,
-} from '@nestjsx/crud-request';
+} from '@tbf-tools/crud-request';
 import {
   ClassType,
   hasLength,
@@ -27,7 +27,7 @@ import {
   isNil,
   isNull,
   withRetry,
-} from '@nestjsx/util';
+} from '@tbf-tools/util';
 import { plainToClass } from 'class-transformer';
 import {
   Brackets,

@@ -10,7 +10,7 @@ import {
   objKeys,
   isNil,
   ObjectLiteral,
-} from '@nestjsx/util';
+} from '@tbf-tools/util';
 import { ClassTransformOptions } from 'class-transformer';
 
 import { RequestQueryException } from './exceptions';

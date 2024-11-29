@@ -1,7 +1,7 @@
 {
   "name": "@tbf-tools/crud-request",
   "description": "NestJs CRUD for RESTful APIs - request query builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -47,7 +47,7 @@
     "build": "npx tsc -b"
   },
   "dependencies": {
-    "@tbf-tools/util": "^1.0.0",
+    "@tbf-tools/util": "^1.0.1",
     "qs": "^6.10.3"
   },
   "gitHead": "f22ffdaef44b1d571a57ad65e4b21bb260ccf949"

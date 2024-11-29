@@ -1,5 +1,3 @@
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine/)
-
 <div align="center">
   <h1>:point_right:<a href="https://github.com/nestjsx/crud/issues/784">You can help NestJs CRUD
   </a></h1>
@@ -15,10 +13,7 @@
 <br />
 
 <div align="center">
-  <a href="https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md">
-    <img src="https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg" alt="StandWithUkraine" />
-  </a>
-  <a href="https://travis-ci.org/nestjsx/crud">
+    <a href="https://travis-ci.org/nestjsx/crud">
     <img src="https://github.com/nestjsx/crud/workflows/Tests/badge.svg" alt="Build" />
   </a>
   <a href="https://coveralls.io/github/nestjsx/crud?branch=master">
