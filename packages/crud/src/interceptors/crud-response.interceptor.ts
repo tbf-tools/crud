@@ -44,11 +44,11 @@ export class CrudResponseInterceptor extends CrudBaseInterceptor implements Nest
   protected serialize(context: ExecutionContext, data: any): any {
     const req = context.switchToHttp().getRequest();
     const { crudOptions, action } = this.getCrudInfo(context);
-    const { serialize, classTransformOptions } = crudOptions;
+    const { serialize } = crudOptions;
     const dto = serialize[actionToDtoNameMap[action]];
     const isArray = Array.isArray(data);
 
-    const options: ClassTransformOptions = classTransformOptions || {};
+    const options: ClassTransformOptions = {};
     /* istanbul ignore else */
     if (isFunction(crudOptions.auth?.classTransformOptions)) {
       const userOrRequest = crudOptions.auth.property ? req[crudOptions.auth.property] : req;
