@@ -33,12 +33,14 @@ export class CrudResponseInterceptor extends CrudBaseInterceptor implements Nest
     }
 
     if (!isFunction(dto)) {
-      return data.constructor !== Object ? instanceToPlain(data, options) : data;
+      return data.constructor !== Object ? plainToInstance(dto, data) : data;
     }
 
-    return data instanceof dto
-      ? instanceToPlain(data, options)
-      : instanceToPlain(plainToInstance(dto, data, options), options);
+    if (data instanceof dto) {
+      return plainToInstance(dto, data, options);
+    }
+
+    return plainToInstance(dto, data, { ...options, excludeExtraneousValues: true });
   }
 
   protected serialize(context: ExecutionContext, data: any): any {

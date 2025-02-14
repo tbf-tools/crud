@@ -1,5 +1,4 @@
 import { ValidationPipeOptions } from '@nestjs/common';
-import { ClassTransformOptions } from 'class-transformer';
 
 import { CrudRoutesFactory } from '../crud';
 import { ModelOptions } from './model-options.interface';
@@ -25,10 +24,6 @@ export interface CrudOptions {
   routesFactory?: typeof CrudRoutesFactory;
   params?: ParamsOptions;
   validation?: ValidationPipeOptions | false;
-  /*
-   Docs: https://github.com/typestack/class-transformer
-   */
-  classTransformOptions?: ClassTransformOptions;
 }
 
 export interface MergedCrudOptions extends CrudOptions {
