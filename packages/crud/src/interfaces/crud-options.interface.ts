@@ -25,6 +25,9 @@ export interface CrudOptions {
   routesFactory?: typeof CrudRoutesFactory;
   params?: ParamsOptions;
   validation?: ValidationPipeOptions | false;
+  /*
+   Docs: https://github.com/typestack/class-transformer
+   */
   classTransformOptions?: ClassTransformOptions;
 }
 
