@@ -5,6 +5,7 @@ import {
   classToPlainFromExist,
   ClassTransformOptions,
   instanceToInstance,
+  instanceToPlain,
   plainToInstance,
 } from 'class-transformer';
 import { Observable } from 'rxjs';
@@ -39,10 +40,12 @@ export class CrudResponseInterceptor extends CrudBaseInterceptor implements Nest
     }
 
     if (!isFunction(dto)) {
-      return data.constructor !== Object ? classToPlain(data, options) : data;
+      return data.constructor !== Object ? plainToInstance(dto, data, options) : data;
     }
 
-    return data instanceof dto ? instanceToInstance(data, options) : plainToInstance(dto, data, options);
+    return data instanceof dto
+      ? instanceToPlain(data, options)
+      : instanceToPlain(plainToInstance(dto, data, options), options);
   }
 
   protected serialize(context: ExecutionContext, data: any): any {
