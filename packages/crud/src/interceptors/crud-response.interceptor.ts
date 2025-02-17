@@ -1,12 +1,6 @@
 import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nestjs/common';
 import { isFalse, isObject, isFunction } from '@tbf-tools/util';
-import {
-  classToPlain,
-  classToPlainFromExist,
-  ClassTransformOptions,
-  instanceToPlain,
-  plainToInstance,
-} from 'class-transformer';
+import { ClassTransformOptions, instanceToPlain, plainToInstance } from 'class-transformer';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CrudActions } from '../enums';
@@ -42,7 +36,12 @@ export class CrudResponseInterceptor extends CrudBaseInterceptor implements Nest
       return data.constructor !== Object ? instanceToPlain(data, options) : data;
     }
 
-    return data instanceof dto ? instanceToPlain(data, options) : plainToInstance(dto, data, options);
+    if (data instanceof dto) {
+      // Khi không có dto
+      return instanceToPlain(data, options);
+    }
+    // Khi có dto
+    return plainToInstance(dto, data, options);
   }
 
   protected serialize(context: ExecutionContext, data: any): any {
