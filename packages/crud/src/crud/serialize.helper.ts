@@ -1,4 +1,4 @@
-import { Type } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { GetManyDefaultResponse } from '../interfaces';
 import { ApiProperty } from './swagger.helper';
 
@@ -7,18 +7,23 @@ export class SerializeHelper {
     class GetManyResponseDto implements GetManyDefaultResponse<any> {
       @ApiProperty({ type: dto, isArray: true })
       @Type(() => dto)
+      @Expose()
       data: any[];
 
       @ApiProperty({ type: 'number' })
+      @Expose()
       count: number;
 
       @ApiProperty({ type: 'number' })
+      @Expose()
       total: number;
 
       @ApiProperty({ type: 'number' })
+      @Expose()
       page: number;
 
       @ApiProperty({ type: 'number' })
+      @Expose()
       pageCount: number;
     }
 

@@ -49,6 +49,7 @@ export class CrudResponseInterceptor extends CrudBaseInterceptor implements Nest
     const { crudOptions, action } = this.getCrudInfo(context);
     const { serialize, classTransformOptions } = crudOptions;
     const dto = serialize[actionToDtoNameMap[action]];
+
     const isArray = Array.isArray(data);
 
     const options: ClassTransformOptions = classTransformOptions || {};
