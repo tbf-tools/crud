@@ -1,7 +1,7 @@
 {
   "name": "@tbf-tools/crud",
   "description": "NestJs CRUD for RESTful APIs",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
