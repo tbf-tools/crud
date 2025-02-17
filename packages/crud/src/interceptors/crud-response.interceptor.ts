@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nestjs/common';
 import { isFalse, isObject, isFunction } from '@tbf-tools/util';
 import {
@@ -42,9 +41,8 @@ export class CrudResponseInterceptor extends CrudBaseInterceptor implements Nest
     if (!isFunction(dto)) {
       return data.constructor !== Object ? instanceToPlain(data, options) : data;
     }
-    return data instanceof dto
-      ? plainToInstance(dto, data, options)
-      : instanceToPlain(plainToInstance(dto, data, options), options);
+
+    return data instanceof dto ? instanceToPlain(data, options) : plainToInstance(dto, data, options);
   }
 
   protected serialize(context: ExecutionContext, data: any): any {
