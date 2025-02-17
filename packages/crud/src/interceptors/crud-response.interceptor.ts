@@ -41,7 +41,6 @@ export class CrudResponseInterceptor extends CrudBaseInterceptor implements Nest
     if (!isFunction(dto)) {
       return data.constructor !== Object ? instanceToPlain(data, options) : data;
     }
-
     return data instanceof dto
       ? plainToInstance(dto, data, options)
       : instanceToPlain(plainToInstance(dto, data, options), options);
