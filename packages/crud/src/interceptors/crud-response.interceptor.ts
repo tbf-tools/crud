@@ -44,7 +44,7 @@ export class CrudResponseInterceptor extends CrudBaseInterceptor implements Nest
     }
 
     return data instanceof dto
-      ? instanceToPlain(data, options)
+      ? plainToInstance(dto, data, options)
       : instanceToPlain(plainToInstance(dto, data, options), options);
   }
 
