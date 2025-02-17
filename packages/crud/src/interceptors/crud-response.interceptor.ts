@@ -4,7 +4,6 @@ import {
   classToPlain,
   classToPlainFromExist,
   ClassTransformOptions,
-  instanceToInstance,
   instanceToPlain,
   plainToInstance,
 } from 'class-transformer';
@@ -40,22 +39,22 @@ export class CrudResponseInterceptor extends CrudBaseInterceptor implements Nest
     }
 
     if (!isFunction(dto)) {
-      return data.constructor !== Object ? plainToInstance(dto, data, options) : data;
+      return data.constructor !== Object ? instanceToPlain(data, options) : data;
     }
 
     return data instanceof dto
-      ? plainToInstance(dto, data, options)
+      ? instanceToPlain(data, options)
       : instanceToPlain(plainToInstance(dto, data, options), options);
   }
 
   protected serialize(context: ExecutionContext, data: any): any {
     const req = context.switchToHttp().getRequest();
     const { crudOptions, action } = this.getCrudInfo(context);
-    const { serialize } = crudOptions;
+    const { serialize, classTransformOptions } = crudOptions;
     const dto = serialize[actionToDtoNameMap[action]];
     const isArray = Array.isArray(data);
 
-    const options: ClassTransformOptions = {};
+    const options: ClassTransformOptions = classTransformOptions || {};
     /* istanbul ignore else */
     if (isFunction(crudOptions.auth?.classTransformOptions)) {
       const userOrRequest = crudOptions.auth.property ? req[crudOptions.auth.property] : req;

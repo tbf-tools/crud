@@ -8,6 +8,7 @@ import { RoutesOptions } from './routes-options.interface';
 import { AuthOptions } from './auth-options.interface';
 import { DtoOptions } from './dto-options.interface';
 import { SerializeOptions } from './serialize-options.interface';
+import { ClassTransformOptions } from 'class-transformer';
 
 export interface CrudRequestOptions {
   query?: QueryOptions;
@@ -24,6 +25,7 @@ export interface CrudOptions {
   routesFactory?: typeof CrudRoutesFactory;
   params?: ParamsOptions;
   validation?: ValidationPipeOptions | false;
+  classTransformOptions?: ClassTransformOptions;
 }
 
 export interface MergedCrudOptions extends CrudOptions {
